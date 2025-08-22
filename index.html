@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheDhruva • Portfolio</title>
+  <meta name="description" content="Dhruva — Web Dev • AI/ML • Data Science. Portfolio showcasing projects, skills, and certificates." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="home">
+  <!-- ====== Header / Hero ====== -->
+  <header id="header" class="header">
+    <div class="container">
+      <nav class="navbar" aria-label="Primary">
+        <a href="#home" class="logo-link" aria-label="Go to home">
+          <!-- Make sure file name & path match case on GitHub Pages -->
+          <img src="assets/icons/logo.png" alt="Dhruva Logo" class="logo" />
+        </a>
+
+        <ul class="nav-links" role="menu" aria-label="Site">
+          <li role="none"><a role="menuitem" href="#home">Home</a></li>
+          <li role="none"><a role="menuitem" href="#about">About</a></li>
+          <li role="none"><a role="menuitem" href="#projects">Projects</a></li>
+          <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+          <li role="none">
+            <button class="close-btn" aria-label="Close menu">
+              <img src="assets/icons/times.png" alt="" class="closes-btn" />
+            </button>
+          </li>
+        </ul>
+
+        <button class="menu-icon" aria-label="Open menu">
+          <img src="assets/icons/menu.png" alt="" class="open-btn" />
+        </button>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>
+            <span class="hi">Hi, I am</span>
+            <span class="name">Anurag Shukla</span><br />
+            I am a <span class="titles" aria-live="polite"></span>
+          </h1>
+        </div>
+        <div class="hero-image">
+          <img src="assets/icons/profile.jpg" alt="Dhruva profile photo" class="profile-image" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== Motivation / Quote ====== -->
+  <section class="quote-section" aria-label="Quote">
+    <div class="quote-container">
+      <p class="quote">"Live as if you were to die tomorrow. Learn as if you were to live forever."</p>
+      <p class="author">— Mahatma Gandhi</p>
+    </div>
+  </section>
+
+  <!-- ====== About Me ====== -->
+  <section id="about" class="aboutme">
+    <h2>About Me</h2>
+    <div class="about-me-content">
+      <img src="assets/icons/profile.jpg" alt="Dhruva profile photo" class="profile-image" />
+
+      <div class="aboutme-text">
+        <p>
+          I'm Dhruva — a B.Tech CSE (AI/ML) student focused on web development, AI/ML,
+          and building real, job-ready projects. I care about clean design, performance,
+          and shipping products that work.
+        </p>
+        <div class="button-group">
+          <!-- TODO: Replace with your resume link -->
+          <a href="assets/resume.pdf" class="btn" target="_blank" rel="noopener">View Resume</a>
+          <a href="mailto:thedhruva07@gmail.com" class="btn-outline">Hire Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Skills ====== -->
+  <section class="skills-section">
+    <h1 class="title">Skills</h1>
+    <div class="skills-container">
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/python.png" alt="Python" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/java.png" alt="Java" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/html-5.png" alt="HTML5" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/css-3.png" alt="CSS3" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/js.png" alt="JavaScript" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/react.png" alt="React" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/mongodb.png" alt="MongoDB" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/aws.png" alt="AWS" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/docker.png" alt="Docker" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/mysql.png" alt="MySQL" /></div></div>
+      <div class="skill"><div class="icon-wrapper"><img src="assets/skills/github.png" alt="GitHub" /></div></div>
+    </div>
+  </section>
+
+  <!-- ====== Projects ====== -->
+  <section id="projects" class="projects-section">
+    <h1 class="section-title">Projects</h1>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="assets/projects/sentiment-analysis.jpg" alt="Sentiment Analysis Project" />
+        <div class="project-overlay">
+          <h2>Sentiment Analysis on Amazon Reviews</h2>
+          <p>A Python-based project using multiple operations for review analysis.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/TheDhruva/sentiment-analysis-amazon-reviews" class="btn" target="_blank" rel="noopener">View Code</a>
+            <!-- ===== <a href="#" class="btn" aria-disabled="true">Live Site</a>===== -->
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/projects/resumegen.png" alt="AI Resume Generator" />
+        <div class="project-overlay">
+          <h2>AI Resume/Cover Letter Gen</h2>
+          <p>Uses AI and Gradio to create resumes and cover letters.</p>
+          <div class="project-buttons">
+            <a href="https://github.com/TheDhruva/GEN-AI-PROJECT" class="btn" target="_blank" rel="noopener">View Code</a>
+            <!-- <a href="#" class="btn" aria-disabled="true">Live Site</a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/projects/coming-soon.jpg" alt="Coming Soon Project" />
+        <div class="project-overlay">
+          <h2>Future Project</h2>
+          <p>Just Chill</p>
+          <!--<div class="project-buttons">
+            <a href="#" class="btn" aria-disabled="true">View Code</a>
+            <a href="#" class="btn" aria-disabled="true">Live Site</a>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Certificates ====== -->
+  <section class="certificate" aria-label="Certificates carousel">
+    <h2>Certificates</h2>
+    <div class="certificate-container">
+      <div class="certificate-scroller">
+        <a href="https://www.linkedin.com/learning/certificates/2798dd29414f1d24e40fe6113158ee6532c64f925da9e0da0769a7dabbd1b505" target="_blank">
+          <img src="assets/certificates/career-essentials-generative-ai.jpg" alt="Career Essentials in Generative AI" />
+        </a>
+        <a href="https://www.coursera.org/account/accomplishments/verify/IKI1YSYQ7SY0" target="_blank">
+          <img src="assets/certificates/coursera.jpg" alt="Coursera Certificate" />
+        </a>
+        <a href="https://www.guvi.in/verify-certificate?id=73KV1s2g27157591oS" target="_blank">
+          <img src="assets/certificates/guvi.png" alt="Guvi Certificate" />
+        </a>
+        <a href="assets/certificates/ibm-pbel.jpg" target="_blank">
+          <img src="assets/certificates/ibm-pbel.jpg" alt="IBM PBEL Certificate" />
+        </a>
+        <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=6811770beeacc2785e536d08" target="_blank">
+          <img src="assets/certificates/wadhwani.jpg" alt="Wadhwani Foundation Certificate" />
+        </a>
+
+        <a href="https://www.linkedin.com/learning/certificates/2798dd29414f1d24e40fe6113158ee6532c64f925da9e0da0769a7dabbd1b505" target="_blank" >
+          <img src="assets/certificates/career-essentials-generative-ai.jpg" alt="Career Essentials in Generative AI" />
+        </a>
+        <a href="https://www.coursera.org/account/accomplishments/verify/IKI1YSYQ7SY0" target="_blank" >
+          <img src="assets/certificates/coursera.jpg" alt="Coursera Certificate" />
+        </a>
+        <a href="https://www.guvi.in/verify-certificate?id=73KV1s2g27157591oS" target="_blank" >
+          <img src="assets/certificates/guvi.png" alt="Guvi Certificate" />
+        </a>
+        <a href="assets/certificates/ibm-pbel.jpg" target="_blank" >
+          <img src="assets/certificates/ibm-pbel.jpg" alt="IBM PBEL Certificate" />
+        </a>
+        <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=6811770beeacc2785e536d08" target="_blank" >
+          <img src="assets/certificates/wadhwani.jpg" alt="Wadhwani Foundation Certificate" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Contact ====== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><img class="icon" src="assets/icons/send.png" alt="" /> thedhruva07@gmail.com</p>
+          <p><img class="icon" src="assets/icons/phone.png" alt="" /> 8081990830</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/thedhruva/" target="_blank" rel="noopener"><img class="icon" src="assets/icons/linkedin.png" alt="LinkedIn" /></a>
+            <a href="https://github.com/TheDhruva" target="_blank" rel="noopener"><img class="icon" src="assets/icons/github.png" alt="GitHub" /></a>
+            <a href="https://www.instagram.com/thedhruva07/" target="_blank" rel="noopener"><img class="icon" src="assets/icons/instagram.png" alt="Instagram" /></a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form action="#" method="post">
+            <input type="text" name="Name" placeholder="Name" required />
+            <input type="email" name="Email" placeholder="Email" required />
+            <textarea name="Message" placeholder="Message" rows="6" required></textarea>
+            <button type="submit" class="btn">Send</button>
+          </form>
+        </div>
+      </div>
+      <footer class="copyright">
+        <p>Copyright &copy; <span id="year"></span> Dhruva. Built with focus and consistency.</p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ====== Back to Top ====== -->
+  <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <!-- ====== Background ASMR Audio ====== -->
+  <audio id="asmr-audio" preload="auto" loop>
+    <source src="assets/audio/rain.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <button id="asmr-toggle" aria-pressed="false" aria-label="Toggle rain sound">🔊</button>
+
+  <!-- ====== Scripts (all logic wrapped & safe for GitHub Pages) ====== -->
+  <script>
+    (function () {
+      const onReady = (fn) => {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", fn, { once: true });
+        } else {
+          fn();
+        }
+      };
+
+      onReady(() => {
+        // Reveal-on-scroll
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) entry.target.classList.add("show");
+            });
+          },
+          { threshold: 0.2 }
+        );
+        document.querySelectorAll("section, header").forEach((el) => {
+          el.classList.add("fade-pop");
+          observer.observe(el);
+        });
+
+        // Rotating titles (robust vs CSS content animation)
+        const titlesEl = document.querySelector(".titles");
+        const roles = ["Web Developer", "AI/ML Learner", "Full‑Stack Builder"];
+        let idx = 0;
+        const setRole = () => {
+          titlesEl.textContent = roles[idx % roles.length];
+          idx++;
+        };
+        setRole();
+        setInterval(setRole, 2500);
+
+        // Mobile menu
+        const menuBtn = document.querySelector(".open-btn");
+        const navLinks = document.querySelector(".nav-links");
+        const closeBtn = document.querySelector(".close-btn");
+
+        menuBtn?.addEventListener("click", () => {
+          navLinks?.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+        closeBtn?.addEventListener("click", () => {
+          navLinks?.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+
+        // Footer year
+        const y = document.getElementById("year");
+        if (y) y.textContent = new Date().getFullYear();
+
+        // ASMR audio: respectful autoplay + interaction fallback
+        const audio = document.getElementById("asmr-audio");
+        const toggle = document.getElementById("asmr-toggle");
+
+        // Start muted to satisfy autoplay policies; try to play() quietly.
+        audio.volume = 0.25;
+        audio.muted = true;
+
+        const tryPlay = async () => {
+          try {
+            await audio.play();
+          } catch (e) {
+            // Autoplay blocked; wait for user gesture below
+          }
+        };
+        tryPlay();
+
+        // On first user interaction, unmute and ensure playing
+        const enableSoundOnce = async () => {
+          try {
+            if (audio.paused) await audio.play();
+            audio.muted = false;
+          } catch (e) {
+            // ignore
+          } finally {
+            window.removeEventListener("click", enableSoundOnce);
+            window.removeEventListener("keydown", enableSoundOnce);
+            window.removeEventListener("touchstart", enableSoundOnce);
+          }
+        };
+        window.addEventListener("click", enableSoundOnce, { once: true });
+        window.addEventListener("keydown", enableSoundOnce, { once: true });
+        window.addEventListener("touchstart", enableSoundOnce, { once: true });
+
+        // Toggle button
+        const updateToggleUI = () => {
+          const muted = audio.muted || audio.paused;
+          toggle.setAttribute("aria-pressed", (!muted).toString());
+          toggle.textContent = muted ? "🔇" : "🔊";
+        };
+        toggle.addEventListener("click", async () => {
+          if (audio.paused) {
+            try {
+              await audio.play();
+              audio.muted = false;
+            } catch (e) {}
+          } else {
+            audio.muted = !audio.muted;
+          }
+          updateToggleUI();
+        });
+        audio.addEventListener("play", updateToggleUI);
+        audio.addEventListener("volumechange", updateToggleUI);
+        audio.addEventListener("pause", updateToggleUI);
+        updateToggleUI();
+      });
+    })();
+  </script>
+</body>
+</html>
