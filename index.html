@@ -17,9 +17,54 @@
     />
     
     <link rel="stylesheet" href="styles.css" />
+    
+    <style>
+      #splash-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-color: #050505;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.8s ease, visibility 0.8s ease;
+      }
+      .splash-content { text-align: center; }
+      .splash-logo {
+        width: 140px; height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #333;
+        margin-bottom: 24px;
+        animation: breathe 3s ease-in-out infinite;
+      }
+      .splash-text {
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.7;
+        animation: fadeText 2s ease-in-out infinite alternate;
+      }
+      @keyframes breathe {
+        0% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 0, 79, 0); border-color: #333; }
+        50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 0, 79, 0.6); border-color: #ff004f; }
+        100% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 0, 79, 0); border-color: #333; }
+      }
+      @keyframes fadeText { from { opacity: 0.3; } to { opacity: 0.8; } }
+      .fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
+    </style>
   </head>
   
   <body id="home">
+    
+    <div id="splash-overlay">
+      <div class="splash-content">
+        <img src="assets/icons/profile.jpg" alt="Logo" class="splash-logo" />
+      </div>
+    </div>
+
     <header id="header" class="header">
       <div class="container">
         <nav class="navbar" aria-label="Primary">
@@ -62,13 +107,6 @@
         </div>
       </div>
     </header>
-
-    <section class="quote-section" aria-label="Quote">
-      <div class="quote-container">
-        <p class="quote">"Live as if you were to die tomorrow. Learn as if you were to live forever."</p>
-        <p class="author">— Mahatma Gandhi</p>
-      </div>
-    </section>
 
     <section id="about" class="aboutme section">
       <div class="container">
@@ -156,37 +194,17 @@
         <div class="certificate-scroller">
           <div class="slide-track">
             
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/career-essentials-generative-ai.jpg" alt="Gen AI" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/coursera.jpg" alt="Coursera" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/guvi.png" alt="Guvi" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/ibm-pbel.jpg" alt="IBM" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/wadhwani.jpg" alt="Wadhwani" /></a>
-            </div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/career-essentials-generative-ai.jpg" alt="Gen AI" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/coursera.jpg" alt="Coursera" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/guvi.png" alt="Guvi" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/ibm-pbel.jpg" alt="IBM" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/wadhwani.jpg" alt="Wadhwani" /></a></div>
 
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/career-essentials-generative-ai.jpg" alt="Gen AI" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/coursera.jpg" alt="Coursera" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/guvi.png" alt="Guvi" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/ibm-pbel.jpg" alt="IBM" /></a>
-            </div>
-            <div class="slide">
-               <a href="#" target="_blank"><img src="assets/certificates/wadhwani.jpg" alt="Wadhwani" /></a>
-            </div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/career-essentials-generative-ai.jpg" alt="Gen AI" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/coursera.jpg" alt="Coursera" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/guvi.png" alt="Guvi" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/ibm-pbel.jpg" alt="IBM" /></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="assets/certificates/wadhwani.jpg" alt="Wadhwani" /></a></div>
 
           </div>
         </div>
@@ -225,14 +243,41 @@
 
     <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
 
-    <audio id="asmr-audio" preload="auto" loop>
+    <audio id="bg-music" loop>
       <source src="assets/audio/rain.mp3" type="audio/mpeg" />
     </audio>
+    
     <button id="asmr-toggle" aria-label="Toggle rain sound" title="Toggle Rain Sound">🔇</button>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         
+        // --- 0. Splash Screen Logic ---
+        const splash = document.getElementById('splash-overlay');
+        const music = document.getElementById('bg-music');
+        const toggleBtn = document.getElementById('asmr-toggle');
+        
+        // Initial state
+        music.volume = 0.3;
+        
+        splash.addEventListener('click', () => {
+          // 1. Play Music
+          music.play().then(() => {
+            toggleBtn.textContent = "🔊";
+            toggleBtn.classList.add("playing");
+          }).catch(error => {
+            console.log("Auto-play prevented by browser policy", error);
+          });
+
+          // 2. Fade out Overlay
+          splash.classList.add('fade-out');
+
+          // 3. Remove from DOM
+          setTimeout(() => {
+            splash.style.display = 'none';
+          }, 800);
+        });
+
         // --- 1. Reveal on Scroll ---
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
@@ -240,10 +285,10 @@
               entry.target.classList.add("show");
             }
           });
-        }, { threshold: 0.1 }); // Trigger slightly earlier
+        }, { threshold: 0.1 }); 
         
         document.querySelectorAll(".section, .hero-content, .project-card, .skill").forEach((el) => {
-          el.classList.add("hidden-el"); // We will style this class in CSS
+          el.classList.add("hidden-el");
           observer.observe(el);
         });
 
@@ -262,7 +307,6 @@
         }, 3000);
 
         // --- 3. Mobile Menu ---
-        const nav = document.querySelector(".navbar");
         const navLinks = document.querySelector(".nav-links");
         const openBtn = document.querySelector(".open-btn");
         const closeBtn = document.querySelector(".close-btn");
@@ -275,39 +319,23 @@
 
         openBtn.addEventListener("click", () => toggleMenu(true));
         closeBtn.addEventListener("click", () => toggleMenu(false));
-        
-        // Close menu when a link is clicked
-        links.forEach(link => {
-            link.addEventListener("click", () => toggleMenu(false));
-        });
+        links.forEach(link => link.addEventListener("click", () => toggleMenu(false)));
 
         // --- 4. Copyright Year ---
         document.getElementById("year").textContent = new Date().getFullYear();
 
-        // --- 5. Audio Logic (Robust) ---
-        const audio = document.getElementById("asmr-audio");
-        const btn = document.getElementById("asmr-toggle");
-        
-        // Default state: Muted & Paused to respect browser policies
-        audio.volume = 0.3; 
-        
-        const toggleAudio = async () => {
-            if (audio.paused) {
-                try {
-                    await audio.play();
-                    btn.textContent = "🔊";
-                    btn.classList.add("playing");
-                } catch (err) {
-                    console.log("Audio play failed:", err);
-                }
-            } else {
-                audio.pause();
-                btn.textContent = "🔇";
-                btn.classList.remove("playing");
-            }
-        };
-        
-        btn.addEventListener("click", toggleAudio);
+        // --- 5. Manual Audio Toggle ---
+        toggleBtn.addEventListener("click", () => {
+           if (music.paused) {
+             music.play();
+             toggleBtn.textContent = "🔊";
+             toggleBtn.classList.add("playing");
+           } else {
+             music.pause();
+             toggleBtn.textContent = "🔇";
+             toggleBtn.classList.remove("playing");
+           }
+        });
       });
     </script>
   </body>
